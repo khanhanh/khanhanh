@@ -1,33 +1,24 @@
 package khanh;
-
 import java.util.Scanner;
-
-public class bai2{
-    public static void main(String[] args)
-    {
-        int n;
-        Scanner scanner=new Scanner(System.in);
-        System.out.println("Moi ban nhap mot so tu ban phim :");
-        n=scanner.nextInt();
-        if(n>=2)
-        {
-            if (n==2)
-                System.out.println(n+" la so nguyen to");
-            else if (n==3)
-                System.out.println(n+" la so nguyen to");
-            else if (n==5)
-                System.out.println(n+" la so nguyen to");
-            else if (n%2==0)
-                System.out.println(n+" khong phai la so nguyen to");
-            else if (n%3==0)
-                System.out.println(n+" khong phai la so nguyen to");
-            else if (n%5==0)
-                System.out.println(n+" khong phai la so nguyen to");
-            else
-                System.out.println(n+" la so nguyen to ");
-
+public class bai1 {
+        public static void main(String [] args){
+            int n;
+            Scanner scanner=new Scanner(System.in);
+            System.out.println("nhap so bat ki :");
+            n=scanner.nextInt();
+            for (int i=0;i<n;i++)
+                System.out.println(n+"so dau trong day Fibonacci : "+fibonacci(i));
         }
-        else
-            System.out.println(n+" khong phai la so nguyen to");
+        static long fibonacci(int n){
+            long f0=0, f1=1,fn=0;
+            if ( n==1) fn=n;
+            else for (int i=2;i<=n;i++)
+            {
+                fn=f0+f1;
+                f0=f1;
+                f1=fn;
+            }
+            return fn;
+        }
+
     }
-}
